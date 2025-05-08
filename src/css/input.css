@@ -1,0 +1,50 @@
+@tailwind base;
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+@tailwind components;
+@tailwind utilities;
+@layer utilities {
+  .shadow-image {
+    box-shadow: 0 0 30px #2563eb;
+  }
+  .shadow-top {
+    box-shadow: 0 -4px 6px -1px rgba(0, 0, 0, 0.1),
+      0 -2px 4px -2px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.navbar-fixed {
+  @apply fixed z-[9999]  bg-slate-400 bg-opacity-30 outline-none backdrop-blur-sm;
+  box-shadow: inset 0 -1px 0 0 rgba(0, 0, 0, 0.2);
+}
+.carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-item {
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-item.active {
+  opacity: 1;
+  position: relative; /* supaya aktif item tetap menempati flow biasa */
+}
+
+.hero {
+  @apply w-full min-h-screen flex items-center justify-center bg-cover bg-center;
+}
+.hero-content {
+  @apply flex flex-col lg:flex-row gap-3 items-center text-center lg:text-left;
+}
+
+.swiper {
+  @apply w-full h-[250px];
+}
+
+.swiper-pagination-bullet {
+  @apply bg-primary !important;
+}
